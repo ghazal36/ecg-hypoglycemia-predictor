@@ -31,6 +31,13 @@ This project uses **machine learning** to analyze ECG data and predict whether a
    The trained model is integrated into a **Streamlit app**, allowing users to upload ECG data and receive predictions instantly.
 
 ---
+**Note about `model.pkl`:**
+- The repository does **not** include a pre-trained model file (`model.pkl`) due to file size and reproducibility reasons.
+- To run the demo locally you should:
+  1. Install Python and required packages: `pip install -r requirements.txt`
+  2. Generate synthetic example data: `python generate_data.py`
+  3. Train the model (this will create `model.pkl`): `python train_model.py`
+  4. Run the Streamlit app: `streamlit run app.py`
 
 ## 🧩 File Structure
 
