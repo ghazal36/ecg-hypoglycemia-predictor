@@ -68,3 +68,4 @@ python train_model.py
 
 # 4. Run the app
 streamlit run app.py
+> This project was built with help from OpenAI’s ChatGPT as part of my CS50 learning journey.
