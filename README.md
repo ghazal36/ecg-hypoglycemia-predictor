@@ -98,6 +98,18 @@ This setup allows you to experiment with the AI model even without installing an
 
 ---
 
+## 🙏 Acknowledgements
+
+This project was created as part of my **CS50 learning journey** with guidance and assistance from **OpenAI’s ChatGPT**,
+which helped in structuring code, debugging, and technical explanations
+
+---
+
+## 👩‍💻 Author
+Developed by Ghazal Attari
+Student participant in CS50
+
+---
 ## 🖥️ How to Run (Optional)
 
 If you want to run this project locally:
@@ -113,11 +125,6 @@ python generate_data.py
 python train_model.py
 
 # 4. Run the app
-streamlit run app.py
+streamlit run app.py```
 
----
 
-## 🙏 Acknowledgements
-
-This project was created as part of my **CS50 learning journey** with guidance and assistance from **OpenAI’s ChatGPT**,
-which helped in structuring code, debugging, and technical explanations
