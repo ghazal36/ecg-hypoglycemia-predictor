@@ -130,7 +130,7 @@ You can explore and run the project interactively using Google Colab. The Colab 
 
 | Model Training (Colab) | 
 |------------------------|
-| ![Training Output](assets/training_output.png) |
+| ![Training Output](assets/training_output.png.jpg) |
 
 ---
 
