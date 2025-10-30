@@ -4,7 +4,7 @@ import pandas as pd
 from scipy.signal import sawtooth
 import os
 
-def generate_ecg(duration_sec=60, fs=250, hr=60, noise_level=0.02, hrv_variability=0.1)
+def generate_ecg(duration_sec=60, fs=250, hr=60, noise_level=0.02, hrv_variability=0.1):
     t = np.arange(0, duration_sec, 1/fs)
     bpm = hr + (np.random.randn(len(t)) * 0.5) 
     f = hr / 60.0
