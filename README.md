@@ -14,6 +14,14 @@ This project uses **machine learning** to analyze ECG data and predict whether a
 
 ---
 
+## Quick run for reviewers
+1. git clone https://github.com/<you>/<repo>.git
+2. cd ecg-hypoglycemia-predictor && pip install -r requirements.txt
+3. streamlit run app.py
+4. Open http://localhost:8501
+
+---
+
  ## Colab Integration
 
  The project was trained and tested in Google Colab.
@@ -41,7 +49,7 @@ This project uses **machine learning** to analyze ECG data and predict whether a
 ---
 
 **Note about `model.pkl`:**
-- The repository does **not** include a pre-trained model file (`model.pkl`) due to file size and reproducibility reasons.
+- A pretrained model file (model.pkl) is included in the repository for reviewers who want to try the demo immediately. If you prefer to retrain from scratch, run python generate_data.py and python train_model.py to recreate the mode.
 - To run the demo locally you should:
   1. Install Python and required packages: `pip install -r requirements.txt`
   2. Generate synthetic example data: `python generate_data.py`
@@ -98,6 +106,34 @@ This setup allows you to experiment with the AI model even without installing an
 
 ---
 
+### Colab Demo Notebook
+colab_demo.ipynb reproduces the full pipeline in Google Colab (data generation → training → prediction) and can be used to recreate the model without installing dependencies locally.
+
+---
+
+## 🧪 Colab Demo
+You can explore and run the project interactively using Google Colab. The Colab notebook contains all the steps to:
+
+1. Generate synthetic ECG data
+2. Train the hypoglycemia prediction model
+3. Test the model with sample ECG signals
+4. Run predictions and visualize results
+
+📓 Colab Notebook:
+[colab_demo.ipynb](colab_demo.ipynb)
+
+> Note: The Colab notebook provides a fully functional demo, including model training. Streamlit real-time links require ngrok setup; here we demonstrate everything within Colab itself.
+
+---
+
+## 📸 Example Outputs
+
+| Model Training (Colab) | 
+|------------------------|
+| ![Training Output](assets/training_output.png) |
+
+---
+
 ## 🙏 Acknowledgements
 
 This project was created as part of my **CS50 learning journey** with guidance and assistance from **OpenAI’s ChatGPT**,
@@ -110,6 +146,7 @@ Developed by Ghazal Attari
 Student participant in CS50
 
 ---
+
 ## 🖥️ How to Run (Optional)
 
 If you want to run this project locally:
