@@ -14,6 +14,16 @@ This project uses **machine learning** to analyze ECG data and predict whether a
 
 ---
 
+---
+
+ ## Colab Integration
+
+ The project was trained and tested in Google Colab.
+ The full workflow — from data generation to model training — was executed in Colab notebooks to ensure reproducibility and easy cloud-based experimentation.
+ A trained model file (model.pkl) was generated and tested successfully.
+ 
+ ---
+ 
 ## ⚙️ How It Works
 
 1. **Data Generation**  
@@ -68,4 +78,47 @@ python train_model.py
 
 # 4. Run the app
 streamlit run app.py
-> This project was built with help from OpenAI’s ChatGPT as part of my CS50 learning journey.
+
+---
+
+## 🧪 Run in Google Colab
+
+If you prefer not to install Python locally, you can run this entire project in Google Colab:
+
+1. Clone the repository inside Colab.
+2. Run generate_data.py to create sample ECG data.
+3. Run train_model.py to train and save the model (model.pkl).
+4. (Optional) Launch the Streamlit app inside Colab using ngrok for a temporary public link.
+
+This setup allows you to experiment with the AI model even without installing anything on your computer.
+
+---
+
+## 📁 Note for Reviewers
+
+* The model file (model.pkl) included in this repository was trained in Google Colab using synthetic ECG samples.
+* For reproducibility, anyone can retrain the model by running the provided notebooks or scripts.
+* This project demonstrates how ECG signals can be used as non-invasive biomarkers for detecting hypoglycemia risk.
+
+---
+
+## 🎯 Goals and Limitations
+
+### Goals
+
+* Explore the use of ECG signals for early detection of hypoglycemia.
+* Build a fully automated pipeline from data generation to real-time prediction.
+* Learn and demonstrate practical machine learning and biomedical signal analysis skills.
+
+### Limitations
+
+* The ECG data used here is **synthetic**, not real patient data.
+* The model is for **educational and research purposes only**, not medical use.
+* Accuracy may vary due to simulated signal randomness
+
+---
+
+## 🙏 Acknowledgements
+
+This project was created as part of my **CS50 learning journey** with guidance and assistance from **OpenAI’s ChatGPT**,
+which helped in structuring code, debugging, and technical explanations
