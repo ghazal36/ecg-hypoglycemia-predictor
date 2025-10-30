@@ -14,8 +14,6 @@ This project uses **machine learning** to analyze ECG data and predict whether a
 
 ---
 
----
-
  ## Colab Integration
 
  The project was trained and tested in Google Colab.
@@ -41,6 +39,7 @@ This project uses **machine learning** to analyze ECG data and predict whether a
    The trained model is integrated into a **Streamlit app**, allowing users to upload ECG data and receive predictions instantly.
 
 ---
+
 **Note about `model.pkl`:**
 - The repository does **not** include a pre-trained model file (`model.pkl`) due to file size and reproducibility reasons.
 - To run the demo locally you should:
@@ -59,25 +58,6 @@ This project uses **machine learning** to analyze ECG data and predict whether a
 | `app.py` | Streamlit web app for real-time prediction |
 | `requirements.txt` | List of Python libraries needed to run the project |
 | `README.md` | Project documentation |
-
----
-
-## 🖥️ How to Run (Optional)
-
-If you want to run this project locally:
-
-```bash
-# 1. Install dependencies
-pip install -r requirements.txt
-
-# 2. Generate synthetic data
-python generate_data.py
-
-# 3. Train the model
-python train_model.py
-
-# 4. Run the app
-streamlit run app.py
 
 ---
 
@@ -115,6 +95,25 @@ This setup allows you to experiment with the AI model even without installing an
 * The ECG data used here is **synthetic**, not real patient data.
 * The model is for **educational and research purposes only**, not medical use.
 * Accuracy may vary due to simulated signal randomness
+
+---
+
+## 🖥️ How to Run (Optional)
+
+If you want to run this project locally:
+
+```bash
+# 1. Install dependencies
+pip install -r requirements.txt
+
+# 2. Generate synthetic data
+python generate_data.py
+
+# 3. Train the model
+python train_model.py
+
+# 4. Run the app
+streamlit run app.py
 
 ---
 
