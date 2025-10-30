@@ -1,0 +1,83 @@
+\n",
+    "\n",
+    "if name == '__main__':\n",
+    "    create_dataset()\n",
+    "'''\n",
+    "open('generate_data.py','w',encoding='utf-8').write(generate_code)\n",
+    "print('generate_data.py overwritten with safe version')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "metadata": {},
+   "source": [
+    "# 4) Generate synthetic ECG samples (this will create data_samples/ and labels.csv)\n",
+    "from generate_data import create_dataset\n",
+    "create_dataset(out_csv='sample_ecg.csv', n_samples=8)\n",
+    "!ls -la data_samples || true\n",
+    "!sed -n '1,40p' data_samples/labels.csv || true"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "metadata": {},
+   "source": [
+    "# 5) Train model (train_model.py uses ecg_utils.extract_features_from_csv)\n",
+    "# Run as script to avoid import path issues\n",
+    "!python3 train_model.py || true\n",
+    "!ls -la model.pkl || echo 'model.pkl not found'"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "If model.pkl was created, you can download it with the next cell. If not, check the error messages above and fix any issues (usually missing dependencies or path problems)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "metadata": {},
+   "source": [
+    "# 6) Download model.pkl to your local machine (if present)\n",
+    "from google.colab import files\n",
+    "if os.path.exists('model.pkl'):\n",
+    "    files.download('model.pkl')\n",
+    "else:\n",
+    "    print('model.pkl not found - training may have failed.')\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "metadata": {},
+   "source": [
+    "# 7) Quick prediction example: load model and predict on sample files\n",
+    "import joblib, pandas as pd, numpy as np\n",
+    "from ecg_utils import extract_features_from_csv\n",
+    "if os.path.exists('model.pkl'):\n",
+    "    model = joblib.load('model.pkl')\n",
+    "    df = pd.read_csv('data_samples/labels.csv')\n",
+    "    X = []\n",
+    "    for f in df['file']:\n",
+    "        feats = extract_features_from_csv(f)\n",
+    "        X.append(feats)\n",
+    "    X_df = pd.DataFrame(X)\n",
+    "    preds = model.predict(X_df.fillna(0))\n",
+    "    df['predicted'] = preds\n",
+    "    print(df)\n",
+    "else:\n",
+    "    print('model.pkl missing - cannot run predictions')\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Notes and troubleshooting\n",
+    "- If any cell prints errors about missing packages, install them with pip install and re-run.\n",
+    "- If train_model.py fails with path errors, ensure you're in the project directory (run !pwd and !ls).\n",
+    "- This notebook is designed to be runnable top-to-bottom in Colab; if you modify files, re-run dependent cells."
+   ]
+  }
+ ]
+}
